@@ -33,7 +33,7 @@
 
 			/* First paragraph style */
 			.p1 {
-				font-family: "Allura," "Pacifico," "Lobster," "Josefin Sans," or "Playfair Display";
+				font-family: "Gill Sans", sans-serif;
 				text-align: center;
 			}
 
@@ -67,8 +67,13 @@
 
 			/* My AI button style */
 			button {
-				background-color: red;
+				background-color: black;
 				color: white;
+				border: none;
+				border-radius: 50%;
+				height: 25px;
+				width: 25px;
+				cursor: pointer;
 			}
 		</style>
 	</head>
@@ -107,9 +112,64 @@
 		</div>
 
 
+
 		<script>
 
-			// 'ch' unit referenced from John's answer on StackOverflow (https://stackoverflow.com/questions/65575027/how-to-set-html-input-tag-width-fit-content-in-css). John's profile (profile: https://stackoverflow.com/users/11111119/john). Going forward, I I rather write all of this code in separate files (.html, .css, .js, etc.), and honestly, I think I would prefer to use the span tag to allow more versatility and functionality, but I just desired something simple to accomplish a minimum viable product. //
+			const handleMessage = async () => {
+const input = document.querySelector("input"),
+  button = document.querySelector("button"),
+  message = input.value.trim();
+
+if (!message) return;
+
+input.insertAdjacentHTML(
+"beforebegin",
+`<p data-user="true">${message}</p>`
+);
+input.value = "";
+
+try {
+const { reply, imageUrl } = await fetch(
+    "https://backend.fesinstitute.com/api/public/chat",
+    {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message, uid: "YvUJTOs94cNgO5U7HSm4OkDJVmG3" }),
+    }
+).then((r) => r.json());
+
+const formattedText = reply
+    .replace(/###\s+(.*)/g, "<h3>$1</h3>")
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/^\s*-\s+(.+)/gm, "<li>$1</li>")
+    .replace(/^\s*\d+\.\s+(.+)/gm, "<li>$1</li>");
+
+input.insertAdjacentHTML(
+    "beforebegin",
+    `<div>${formattedText}` +
+    (imageUrl
+        ? `<img src="${imageUrl}"></div>`
+        : "</div>")
+);
+} catch {
+input.insertAdjacentHTML(
+    "beforebegin",
+    `<p>Bot: Something went wrong!</p>`
+);
+}
+};
+
+document.querySelector("button").onclick = handleMessage;
+
+document.querySelector("input").addEventListener("keypress", (e) => {
+if (e.key === "Enter") {
+e.preventDefault();
+handleMessage();
+}
+});
+
+
+// 'ch' unit referenced from John's answer on StackOverflow (https://stackoverflow.com/questions/65575027/how-to-set-html-input-tag-width-fit-content-in-css). John's profile (profile: https://stackoverflow.com/users/11111119/john). Going forward, I I rather write all of this code in separate files (.html, .css, .js, etc.), and honestly, I think I would prefer to use the span tag to allow more versatility and functionality, but I just desired something simple to accomplish a minimum viable product. //
 
 			function myFunction() {
   document.getElementById("qtxt").style.width = (qtxt.value.length) + 'ch';
