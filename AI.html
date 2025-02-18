@@ -1,21 +1,121 @@
-<style>
-	button {
-		background-color: red;
-		color: white;
-	}
-</style>
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+
+		<style>
+			body, html {
+              height: 50%;
+              margin: 0;
+            }
+
+            .bg {
+              /* The image used */
+              background: url("https://sallysbakingaddiction.com/wp-content/uploads/2013/05/classic-chocolate-chip-cookies.jpg");
+
+              /* Full height */
+              height: 100%; 
+
+              /* Centers and scales my image smooth and professional */
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
 
 
-<h1>My First AI Chat Bot</h1>
+			/* Style for my header */
+			.h1 {
+				font-family: "san-serif", Playfair Display, Bodoni;
+				text-align: center;
+			}
 
-<p>
-	<a href="https://supercodingninja.github.io/" target=”_blank”>"HELLO, WORLD!"</a> This is my first AI chat box.  I have developed dialogue prompts before- even multiple choice <a href="https://supercodingninja.github.io/WhoIsOutside/" target=”_blank”>game</a>- and I've even used API (Application Programming Interface), and I am familiar of integrating such tools and technologies as ChatGPT into a website; but I have never fully coded my very own Chat Bot until Mr. David Bragg, founder of <a href="https://frontendsimplified.com/" target=”_blank”>Frontend Simplified</a> shown me how; and I highly recommend his courses!
-</p>
 
-<p>
-	So, without further ado, "Hello 👋🏿 My name is <a href="https://github.com/supercodingninja" target=”_blank”>Frederick</a>.  How can I help you today?"
-</p>
+			/* First paragraph style */
+			.p1 {
+				font-family: "Allura," "Pacifico," "Lobster," "Josefin Sans," or "Playfair Display";
+				text-align: center;
+			}
 
-<input></input>
 
-<button>⬆</button>
+			/* My query prompt style */
+			.queryPrompt {
+				font-family: "Fantasy", Copperplate, Papyris;
+				text-align: center;
+			}
+
+
+			/* Query input field and button alignment */
+			.queryIB {
+				display: flex;
+  				flex-direction: row;
+  				justify-content: center;
+				align-items: center;
+				gap: 5px;
+			}
+
+
+			/* End-user query input field */
+			.input {
+				font-family: "Ramaraja", Helvetica;
+				display: flex;
+  				text-align: center;
+				width: fit-content;
+    			min-width: 150px;
+			}
+
+
+			/* My AI button style */
+			button {
+				background-color: red;
+				color: white;
+			}
+		</style>
+	</head>
+
+
+
+	<body>
+
+		<!-- For association with my background style -->
+    	<div class="bg"></div>
+
+      
+		<!-- My header -->  
+		<h1 class="h1" >My First AI Chat Bot</h1>
+
+		
+		<!-- My first paragraph -->
+		<p class="p1">
+			<a href="https://supercodingninja.github.io/" target=”_blank”>"HELLO, WORLD!"</a> This is my first AI chat box.  I have developed dialogue prompts before- even multiple choice <a href="https://supercodingninja.github.io/WhoIsOutside/" target=”_blank”>game</a>- and I've even used API (Application Programming Interface).  I am familiar with integrating tools and technologies into a website (such as ChatGPT). Still, I had never fully coded my very own Chat Bot until Mr. David Bragg, founder of <a href="https://frontendsimplified.com/" target=”_blank”>Frontend Simplified</a> showed me how, and I highly recommend his courses!
+		</p>
+
+
+		<!-- My inquisition leading user to query search engine -->
+		<h3 class="queryPrompt">
+			So, without further ado, hello 👋🏿 my name is <a href="https://github.com/supercodingninja" target=”_blank”>Frederick</a> 👨🏾‍🎓 How can I help you today?
+		</h3>
+
+
+		<div class="queryIB">
+			<!-- Simple form field for user to enter query. -->
+			<input type="text" id="qtxt" onkeypress="this.style.width = (this.value.length) + 'ch';" placeholder='Type a word or sentence' class="input" onload="myFunction()"></input>
+
+
+			<!-- This button is designed for the end user to submit the desired query (stand back and watch the magic happen and be in awe👨🏾‍🎓) -->
+			<button>⬆</button>
+		</div>
+
+
+		<script>
+
+			// 'ch' unit referenced from John's answer on StackOverflow (https://stackoverflow.com/questions/65575027/how-to-set-html-input-tag-width-fit-content-in-css). John's profile (profile: https://stackoverflow.com/users/11111119/john). Going forward, I I rather write all of this code in separate files (.html, .css, .js, etc.), and honestly, I think I would prefer to use the span tag to allow more versatility and functionality, but I just desired something simple to accomplish a minimum viable product. //
+
+			function myFunction() {
+  document.getElementById("qtxt").style.width = (qtxt.value.length) + 'ch';
+			}
+
+			window.onload = myFunction();
+		</script>
+	</body>
+</html>
