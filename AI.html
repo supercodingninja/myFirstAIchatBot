@@ -6,151 +6,48 @@
 
 		<style>
 			body, html {
-				height: 50%;
-				margin: 0 auto;
-				min-height: 100vh;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				max-width: 625px;
-				text-align: center;
+              height: 50%;
+              margin: 0;
+			  font-size: 20px;
+			  margin-top: 2px;
+			  margin-bottom: 16px;
             }
 
-			/* Cool AI Bot Background Vid */
-			.bg2 {
-				position: absolute;
-				top: 0;
-				right: 0;
-				z-index: -1;
-				min-height: 100vh;
-			}
-
-			@media (min-aspect-ratio: 16/9) {
-				.bg2 {
-					width: 100%;
-					height: auto;
-				}
-			}
-			@media (max-aspect-ratio: 16/9) {
-				.bg2 {
-					width: auto;
-					height: 100%;
-				}
-			}
-
-			/* Responsiveness: Smartphones and other devices */
-			/* Small phones, tablets, large smartphones */
-			@media (max-width: 768px) {
-				nav {
-					height: 68px;
-					color: whitesmoke;
-				}
-
-				h1 {
-					font-size: 12px;
-					text-align: center;
-				}
-
-				.p1 {
-					font-family: "Gill Sans", sans-serif;
-					text-align: center;
-					font-size: 12px;
-				}
-
-				.queryPrompt {
-					font-family: "Fantasy", Copperplate, Papyris;
-					text-align: center;
-					color: whitesmoke;
-					font-size: 8px;
-				}
-			}
-
-			@media (max-width: 1366px) {
-				nav {
-					height: 68px;
-					color: whitesmoke;
-				}
-
-				h1 {
-					font-size: 16px;
-					text-align: center;
-				}
-
-				.p1 {
-					font-family: "Gill Sans", sans-serif;
-					text-align: center;
-					font-size: 8px;
-				}
-
-				.queryPrompt {
-					font-family: "Fantasy", Copperplate, Papyris;
-					text-align: center;
-					color: whitesmoke;
-					font-size: 12px;
-				}
-			}
-
-
-            /* .bg { */
+			
+            .bg {
               /* The image used */
-              /* background: url("https://sallysbakingaddiction.com/wp-content/uploads/2013/05/classic-chocolate-chip-cookies.jpg"); 
-		
+              background: url("https://sallysbakingaddiction.com/wp-content/uploads/2013/05/classic-chocolate-chip-cookies.jpg");
 
               /* Full height */
-              /* height: 100%; */
+              height: 100%;
+			  top: 50;
+			  right: 0;
 
               /* Centers and scales my image smooth and professional */
-              /*background-position: center;
+              background-position: center;
               background-repeat: no-repeat;
               background-size: cover;
-            }*/
+            }
 
-			/* All Font (particuraly the answers to query). */
-			font {
-				color: whitesmoke;
-				font-size: x-large;
-			}
 
 			/* Style for my header */
 			.h1 {
-				font-size: xx-large;
 				font-family: "san-serif", Playfair Display, Bodoni;
 				text-align: center;
-				padding: 7px;
-    background: linear-gradient(to right, gold, #71713a, #544478, silver, whitesmoke, gold, #71713a, #544478, silver, whitesmoke);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 			}
 
 
 			/* First paragraph style */
 			.p1 {
-				min-height: 100vh;
 				font-family: "Gill Sans", sans-serif;
 				text-align: center;
-				color: whitesmoke;
-				font-size: 24px;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				max-width: 625px;
-				margin: 0 auto;
-			}
-
-			.para {
-				font-size: 24px;
-				margin-top: 2px;
-				margin-bottom: 16px;
-				color: whitesmoke;
 			}
 
 
 			/* My query prompt style */
 			.queryPrompt {
-				font-size: 24px;
 				font-family: "Fantasy", Copperplate, Papyris;
 				text-align: center;
-				color: whitesmoke;
 			}
 
 
@@ -161,8 +58,6 @@
   				justify-content: center;
 				align-items: center;
 				gap: 5px;
-    			overflow: hidden;
-				color: whitesmoke;
 			}
 
 
@@ -173,13 +68,12 @@
   				text-align: center;
 				width: fit-content;
     			min-width: 150px;
-				max-width: 625px;
 			}
 
 
 			/* My AI button style */
 			button {
-				background-color: gold;
+				background-color: black;
 				color: white;
 				border: none;
 				border-radius: 50%;
@@ -194,21 +88,17 @@
 
 	<body>
 
-		<video autoplay loop muted plays-inline class="bg2">
-			<source src="./aiBot.mov">
-		</video>
-
 		<!-- For association with my background style -->
-    	<!-- <div class="bg"></div> -->
+    	<div class="bg"></div>
 
       
 		<!-- My header -->  
-		<h1 class="h1">My First AI Chat Bot</h1>
+		<h1 class="h1" >My First AI Chat Bot</h1>
 
 		
 		<!-- My first paragraph -->
-		<p class="<p class="p1 para" style="color:whitesmoke">
-			<a href="https://supercodingninja.github.io/" target=”_blank”><b style="color: gold; font-size: xx-large;"><u>"HELLO, WORLD!"</u></b></a> (👈🏿Check out first website & my AI Chatbot repository just by clicking the hyperlinks 👇🏿) This is my first AI chat box.  I have developed dialogue prompts before- even multiple choice <a href="https://supercodingninja.github.io/WhoIsOutside/" target=”_blank”>game</a>- and I've even used API (Application Programming Interface).  I am familiar with integrating tools and technologies into a website (such as ChatGPT). Still, I had never fully coded my very own Chat Bot until Mr. David Bragg, founder of <a href="https://frontendsimplified.com/" target=”_blank”>Frontend Simplified</a> showed me how, and I highly recommend his courses!
+		<p class="p1">
+			<a href="https://supercodingninja.github.io/" target=”_blank”>"HELLO, WORLD!"</a> This is my first AI chat box.  I have developed dialogue prompts before- even multiple choice <a href="https://supercodingninja.github.io/WhoIsOutside/" target=”_blank”>game</a>- and I've even used API (Application Programming Interface).  I am familiar with integrating tools and technologies into a website (such as ChatGPT). Still, I had never fully coded my very own Chat Bot until Mr. David Bragg, founder of <a href="https://frontendsimplified.com/" target=”_blank”>Frontend Simplified</a> showed me how, and I highly recommend his courses!
 		</p>
 
 
